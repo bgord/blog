@@ -30,7 +30,7 @@ const Bio = () => {
 		>
 			<p>
 				Hello, I'm <strong>{author}</strong> from Poznań, Poland. I'm a
-				full-stack JavaScript enthusiast with main focus on React and testing.
+				full-stack JavaScript developer with main focus on React and testing.
 			</p>
 			<div>
 				<a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
