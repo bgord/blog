@@ -1,7 +1,7 @@
 import React from "react";
 import {Link, graphql} from "gatsby";
 
-import Bio from "../components/bio";
+import Social from "../components/social";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {rhythm, scale} from "../utils/typography";
@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
 						}}
 					/>
 					<footer>
-						<Bio />
+						<Social />
 					</footer>
 				</article>
 
@@ -57,19 +57,20 @@ class BlogPostTemplate extends React.Component {
 							justifyContent: `space-between`,
 							listStyle: `none`,
 							padding: 0,
+							marginTop: rhythm(1),
 						}}
 					>
 						<li>
 							{previous && (
 								<Link to={previous.fields.slug} rel="prev">
-									← {previous.frontmatter.title}
+									← Previous article
 								</Link>
 							)}
 						</li>
 						<li>
 							{next && (
 								<Link to={next.fields.slug} rel="next">
-									{next.frontmatter.title} →
+									Next article →
 								</Link>
 							)}
 						</li>

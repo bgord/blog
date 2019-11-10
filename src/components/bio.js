@@ -1,7 +1,8 @@
-import React from "react";
 import {useStaticQuery, graphql} from "gatsby";
+import React from "react";
 
 import {rhythm} from "../utils/typography";
+import Social from "./social";
 
 const Bio = () => {
 	const data = useStaticQuery(graphql`
@@ -9,17 +10,12 @@ const Bio = () => {
 			site {
 				siteMetadata {
 					author
-					social {
-						twitter
-						github
-						devto
-					}
 				}
 			}
 		}
 	`);
 
-	const {author, social} = data.site.siteMetadata;
+	const {author} = data.site.siteMetadata;
 	return (
 		<div
 			style={{
@@ -32,21 +28,7 @@ const Bio = () => {
 				Hello, I'm <strong>{author}</strong> from Poznań, Poland. I'm a
 				full-stack JavaScript developer with main focus on React and testing.
 			</p>
-			<div>
-				<a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
-				<a
-					style={{marginLeft: rhythm(1 / 2)}}
-					href={`https://github.com/${social.github}`}
-				>
-					GitHub
-				</a>
-				<a
-					style={{marginLeft: rhythm(1 / 2)}}
-					href={`https://dev.to/${social.devto}`}
-				>
-					Dev.to
-				</a>
-			</div>
+			<Social />
 		</div>
 	);
 };
