@@ -4,7 +4,9 @@ date: "2019-01-19T10:40:28.169Z"
 description: Learn shortcuts for browsers.
 ---
 
-> In this post, I'm going to use the Firefox browser's shortcuts as an example. Most of them should work in other — webkit based — browsers too. Prefix for given shortcut may differ based on the operating system.
+> You can read that post on [dev.to](https://dev.to/bgord/going-almost-mouseless-browsers--5c1h).
+
+In this post, I'm going to use the Firefox browser's shortcuts as an example. Most of them should work in other — webkit based — browsers too. Prefix for given shortcut may differ based on the operating system.
 
 ## Why even bother?
 

@@ -4,6 +4,8 @@ date: "2019-11-09T23:42:32.169Z"
 description: Create as many Postgres databases in a single Docker container as you want.
 ---
 
+> You can read that post on [dev.to](https://dev.to/bgord/multiple-postgres-databases-in-a-single-docker-container-417l).
+
 This will be a short one.
 
 The official Postgres Docker [image](https://hub.docker.com/_/postgres) supports a few environment variables.

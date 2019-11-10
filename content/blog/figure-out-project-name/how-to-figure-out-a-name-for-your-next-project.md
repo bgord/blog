@@ -4,6 +4,8 @@ date: "2019-10-27T01:46:46.169Z"
 description: A semi-structured creative thought process to figure out project names.
 ---
 
+> You can read that post on [dev.to](https://dev.to/bgord/how-to-figure-out-a-name-for-your-next-project-3jjg).
+
 I have a confession to make.
 I'm unable to work on a project unless it has a name.
 So the ability to verbalize an idea is a crucial part of my side projects.

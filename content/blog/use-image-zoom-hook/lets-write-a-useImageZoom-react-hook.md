@@ -1,10 +1,12 @@
 ---
-title: Let's write a useImageZoom React hook 
+title: Let's write a useImageZoom React hook
 date: "2019-06-09T23:42:32.169Z"
 description: Basic React Hook example explained on a real world scenario.
 ---
 
-Let's write a useImageZoom React hook 
+> You can read that post on [dev.to](https://dev.to/bgord/let-s-write-a-useimagezoom-react-hook-5354).
+
+Let's write a useImageZoom React hook
 
 In this article, I am going to present a basic React hook responsible for handling image "zoom" functionality.
 
@@ -13,9 +15,10 @@ In this article, I am going to present a basic React hook responsible for handli
 ![](https://media.giphy.com/media/fSvVcoSiGiCoAHjIYf/giphy.gif)
 
 The goal is to create a `useImageZoom` hook that provides three handlers:
-* zoom in
-* zoom out
-* reset zoom
+
+- zoom in
+- zoom out
+- reset zoom
 
 Bearing that in mind, we can already plan the API that hook may expose.
 
@@ -94,58 +97,56 @@ import "./styles.css";
 // }
 
 function App() {
-  const [zoomStyles, handlers] = useImageZoom();
+	const [zoomStyles, handlers] = useImageZoom();
 
-  return (
-    <div className="app">
-      <div className="buttons">
-        <button onClick={handlers.zoomIn}>Zoom in</button>
-        <button onClick={handlers.zoomOut}>Zoom out</button>
-      </div>
-      <div className="preview">
-        <img
-          style={{ ...zoomStyles }}
-          onClick={handlers.resetZoom}
-          src="https://placeimg.com/150/150/arch"
-          alt="preview box"
-        />
-      </div>
-    </div>
-  );
+	return (
+		<div className="app">
+			<div className="buttons">
+				<button onClick={handlers.zoomIn}>Zoom in</button>
+				<button onClick={handlers.zoomOut}>Zoom out</button>
+			</div>
+			<div className="preview">
+				<img
+					style={{...zoomStyles}}
+					onClick={handlers.resetZoom}
+					src="https://placeimg.com/150/150/arch"
+					alt="preview box"
+				/>
+			</div>
+		</div>
+	);
 }
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
-
 ```
 
 ```css
 /* styles.css */
 
 .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: sans-serif;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: sans-serif;
+	text-align: center;
 }
 
 .buttons {
-  margin-top: 50px;
+	margin-top: 50px;
 }
 
 .preview {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  width: 300px;
-  margin-top: 50px;
-  background: #eee;
-  overflow: auto;
-  position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	width: 300px;
+	margin-top: 50px;
+	background: #eee;
+	overflow: auto;
+	position: relative;
 }
-
 ```
 
 Let's see it in action.
@@ -159,10 +160,11 @@ As you may have noticed, we have a problem. Both sides of the image get incremen
 The issue is that `transform-origin`'s initial value equals `"50% 50%"`, which is equivalent to the center of a given image. To get a sense of what this property does, please refer to [this page](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin).
 
 To apply the solution, change `zoomStyles` object to the following:
+
 ```js
 const zoomStyles = {
-  transform: `scale(${zoomLevel})`,
-  transformOrigin: "top left"
+	transform: `scale(${zoomLevel})`,
+	transformOrigin: "top left",
 };
 ```
 
@@ -175,13 +177,14 @@ Ok, the image does not get cropped, but there is another problem. Have you notic
 We can do it by positioning the image absolutely in the top left corner of the preview box but only if zoom level greater than 1 is applied.
 
 Change `zoomStyles` object to the following:
+
 ```js
 const zoomStyles = {
-  transform: `scale(${zoomLevel})`,
-  transformOrigin: "top left",
-  position: zoomLevel > 1 ? "absolute" : undefined,
-  top: zoomLevel > 1 ? 0 : undefined,
-  left: zoomLevel > 1 ? 0 : undefined
+	transform: `scale(${zoomLevel})`,
+	transformOrigin: "top left",
+	position: zoomLevel > 1 ? "absolute" : undefined,
+	top: zoomLevel > 1 ? 0 : undefined,
+	left: zoomLevel > 1 ? 0 : undefined,
 };
 ```
 
@@ -192,5 +195,3 @@ Voilà, it works!
 The final version is available on [codesandbox](https://codesandbox.io/s/epic-moon-suhcj?fontsize=14).
 
 In the next article, we are going to make `useImageZoom` hook more flexible and easier to use. Stay tuned!
-
-

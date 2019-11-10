@@ -4,6 +4,8 @@ date: "2019-01-26T09:24:29.169Z"
 description: Keeping track of my learning progress.
 ---
 
+> You can read that post on [dev.to](https://dev.to/bgord/how-do-i-identify-my-knowledge-gaps-and-learn-4mlc).
+
 In this article, I'm going to present you my workflow for gathering topics and a way to efficiently learn them.
 
 No one knows everything, that's certain. Every day, I find myself not knowing something, be it a syntax, concept or a pattern. Some missing answers are one google (or duckduckgo) search away, so it would probably be a waste of memory and effort to learn by heart anything I'm able to find under one minute.
