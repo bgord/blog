@@ -24,7 +24,7 @@ const Social = () => {
 	return (
 		<div>
 			<div style={{display: "inline-block", marginRight: rhythm(0.5)}}>
-				Catch me here:
+				You can catch me here:
 			</div>
 			<a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
 			<a
