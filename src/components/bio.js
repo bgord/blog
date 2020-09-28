@@ -13,7 +13,7 @@ const Bio = () => {
 			}}
 		>
 			<p>
-				Hi, I'm a full-stack JavaScript developer from Poznań, Poland with main
+				Hi, I'm a full-stack JavaScript developer from Warsaw, Poland with main
 				focus on React, testing, and REST APIs.
 			</p>
 			<Social />
