@@ -26,7 +26,7 @@ const Social = () => {
 				You can catch me here:
 			</div>
 			<a
-				style={{marginLeft: rhythm(1 / 2)}}
+				style={{marginLeft: rhythm(1 / 8)}}
 				href={`https://github.com/${social.github}`}
 			>
 				GitHub

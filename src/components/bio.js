@@ -9,7 +9,7 @@ const Bio = () => {
 			style={{
 				display: `flex`,
 				flexDirection: "column",
-				marginBottom: rhythm(2.5),
+				marginBottom: rhythm(1),
 			}}
 		>
 			<p>
