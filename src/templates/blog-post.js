@@ -4,6 +4,7 @@ import {Link, graphql} from "gatsby";
 import Social from "../components/social";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Type from "../components/type";
 import {rhythm, scale} from "../utils/typography";
 
 class BlogPostTemplate extends React.Component {
@@ -23,15 +24,19 @@ class BlogPostTemplate extends React.Component {
 						<h1
 							style={{
 								marginTop: rhythm(1),
-								marginBottom: 0,
+								marginBottom: rhythm(0.5),
 							}}
 						>
 							{post.frontmatter.title}
 						</h1>
+
+						<Type type={post.frontmatter.type} />
+
 						<p
 							style={{
 								...scale(-1 / 5),
 								display: `block`,
+								marginTop: rhythm(1 / 8),
 								marginBottom: rhythm(1),
 							}}
 						>
@@ -98,6 +103,7 @@ export const pageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				description
+				type
 			}
 		}
 	}

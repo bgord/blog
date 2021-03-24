@@ -2,6 +2,7 @@ import React from "react";
 import {Link, graphql} from "gatsby";
 
 import Bio from "../components/bio";
+import Type from "../components/type";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {rhythm} from "../utils/typography";
@@ -16,8 +17,10 @@ class BlogIndex extends React.Component {
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO title="All posts" />
 				<Bio />
+
 				{posts.map(({node}) => {
 					const title = node.frontmatter.title || node.fields.slug;
+
 					return (
 						<article key={node.fields.slug}>
 							<header>
@@ -30,7 +33,9 @@ class BlogIndex extends React.Component {
 										{title}
 									</Link>
 								</h3>
+
 								<small>{node.frontmatter.date}</small>
+								<Type type={node.frontmatter.type} />
 							</header>
 							<section>
 								<p
@@ -67,6 +72,7 @@ export const pageQuery = graphql`
 						date(formatString: "MMMM DD, YYYY")
 						title
 						description
+						type
 					}
 				}
 			}
