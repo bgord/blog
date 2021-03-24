@@ -2,7 +2,7 @@
 title: "Simplify repetitive Jest test cases with test.each"
 date: "2019-05-06T10:02:47.169Z"
 description: Use jest's test.each helper to avoid repetitive logic.
-type: ramblings
+type: general
 ---
 
 > You can read that post on [dev.to](https://dev.to/bgord/simplify-repetitive-jest-test-cases-with-test-each-310m).

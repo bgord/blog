@@ -2,7 +2,7 @@
 title: "Going (almost) mouseless: browsers"
 date: "2019-01-19T10:40:28.169Z"
 description: Learn shortcuts for browsers.
-type: ramblings
+type: general
 ---
 
 > You can read that post on [dev.to](https://dev.to/bgord/going-almost-mouseless-browsers--5c1h).
