@@ -2,6 +2,7 @@
 title: How do I identify my knowledge gaps and learn?
 date: "2019-01-26T09:24:29.169Z"
 description: Keeping track of my learning progress.
+type: ramblings
 ---
 
 > You can read that post on [dev.to](https://dev.to/bgord/how-do-i-identify-my-knowledge-gaps-and-learn-4mlc).

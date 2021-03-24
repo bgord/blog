@@ -2,6 +2,7 @@
 title: Multiple Postgres databases in Docker container
 date: "2019-11-09T23:42:32.169Z"
 description: Create as many Postgres databases in a single Docker container as you want.
+type: ramblings
 ---
 
 > You can read that post on [dev.to](https://dev.to/bgord/multiple-postgres-databases-in-a-single-docker-container-417l).

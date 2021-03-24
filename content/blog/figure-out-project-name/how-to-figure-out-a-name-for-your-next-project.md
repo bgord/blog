@@ -2,6 +2,7 @@
 title: "How to figure out a name for your next project? "
 date: "2019-10-27T01:46:46.169Z"
 description: A semi-structured creative thought process to figure out project names.
+type: ramblings
 ---
 
 > You can read that post on [dev.to](https://dev.to/bgord/how-to-figure-out-a-name-for-your-next-project-3jjg).
