@@ -10,7 +10,6 @@ const Social = () => {
 				siteMetadata {
 					author
 					social {
-						twitter
 						github
 						devto
 					}
@@ -26,7 +25,6 @@ const Social = () => {
 			<div style={{display: "inline-block", marginRight: rhythm(0.5)}}>
 				You can catch me here:
 			</div>
-			<a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
 			<a
 				style={{marginLeft: rhythm(1 / 2)}}
 				href={`https://github.com/${social.github}`}
