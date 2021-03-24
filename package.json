@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "bartosz-gordon-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A personal blog by Bartosz Gordon.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Bartosz Gordon <gordonbartosz@gmail.com>",
   "dependencies": {
     "gatsby": "^2.32.11",
     "gatsby-image": "^2.11.0",
