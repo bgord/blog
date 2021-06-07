@@ -52,10 +52,11 @@ pasta,3.79
 
 3. **Cut the first column**
 
-`awk` splits each line by comma, defined by the option `-F` (file separator), and prints the second column.
+`awk` splits each line by a separator defined by the option `-F`, in our case it's comma.
+Then it prints the second column.
 
 ```bash
-$ cat /tmp/shopping.csv | tail +2 | awk -F , '{print $2}'
+$ cat shopping.csv | tail +2 | awk -F , '{print $2}'
 ```
 
 Output:
