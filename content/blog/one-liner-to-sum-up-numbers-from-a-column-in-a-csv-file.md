@@ -14,7 +14,7 @@ potatos,1.49
 pasta,3.79
 ```
 
-The goal is to create a one-line bash script calculating the sum of the prices, which is **7.77**.
+The goal is to create a one-line bash script that prints the sum of the prices in the file above, which is **7.77**.
 
 1. **Print the file content**
 
