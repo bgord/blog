@@ -1,11 +1,11 @@
 ---
 title: "One-liner to sum up numbers from a CSV file"
 date: "2021-06-07"
-description: A step-by-step guide to build a script using cat, tail, awk, xargs, sed, and bc.
+description: A step-by-step guide to building a script using cat, tail, awk, xargs, sed, and bc.
 type: unix
 ---
 
-This is the `shopping.csv` CSV file that we're going to be working with throughout this blog post.
+This is the `shopping.csv` CSV file that we will be working with throughout this blog post.
 
 ```
 item,price
@@ -16,14 +16,14 @@ pasta,3.79
 
 The goal is to create a one-line bash script calculating the sum of the prices, which is **7.77**.
 
-1. **Display the file**
+1. **Print the file content**
 
 ```bash
 $ cat shopping.csv
 ```
 
 This command prints the file content without modifications.
-It gives us the benefit to redirect - pipe - the output to another comand in the next step.
+It gives us a way to redirect - pipe - the output to another command in the next step.
 
 ```
 item,price
@@ -36,7 +36,7 @@ pasta,3.79
 
 There are many ways to achieve it, but we use the `tail +n` syntax.
 
-In our case it takes all the lines until the end of the file, starting from the second line.
+In our case, it takes all the lines until the end of the file, starting from the second line.
 
 ```bash
 $ cat shopping.csv | tail +2
@@ -52,7 +52,9 @@ pasta,3.79
 
 3. **Cut the first column**
 
-`awk` splits each line by a separator defined by the option `-F`, in our case it's comma.
+`awk` splits each line by a separator defined by the option `-F`.
+In our case, it's the comma.
+
 Then it prints the second column.
 
 ```bash
@@ -97,7 +99,7 @@ Output:
 
 6. **Perform the calculation**
 
-`bc` is a simple calculator, you can use it interactively or by piping an equation into it.
+`bc` is a simple calculator that you can use interactively or by piping an equation into it.
 
 ```bash
 $ cat shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g' | bc
