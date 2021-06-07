@@ -83,10 +83,10 @@ Output:
 
 5. **Replace spaces with pluses**
 
-The `sed` expression replaces space `\ ` with `+` globally (`g`).
+The `sed` expression replaces space `\` with `+` in the entire string (globally - `g`).
 
 ```bash
-$ cat /tmp/shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g'
+$ cat shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g'
 ```
 
 Output:
