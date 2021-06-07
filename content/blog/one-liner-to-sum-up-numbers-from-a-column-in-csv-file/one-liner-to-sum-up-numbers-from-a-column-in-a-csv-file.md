@@ -25,6 +25,8 @@ $ cat shopping.csv
 This command prints the file content without modifications.
 It gives us a way to redirect - pipe - the output to another command in the next step.
 
+Output:
+
 ```
 item,price
 rice,2.49
