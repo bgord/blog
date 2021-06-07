@@ -1,6 +1,6 @@
 ---
 title: Let's write a useImageZoom React hook
-date: "2019-06-09T23:42:32.169Z"
+date: "2019-06-09"
 description: Basic React Hook example explained on a real world scenario.
 type: general
 ---

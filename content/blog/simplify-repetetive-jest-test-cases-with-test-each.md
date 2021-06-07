@@ -1,6 +1,6 @@
 ---
 title: "Simplify repetitive Jest test cases with test.each"
-date: "2019-05-06T10:02:47.169Z"
+date: "2019-05-06"
 description: Use jest's test.each helper to avoid repetitive logic.
 type: general
 ---
