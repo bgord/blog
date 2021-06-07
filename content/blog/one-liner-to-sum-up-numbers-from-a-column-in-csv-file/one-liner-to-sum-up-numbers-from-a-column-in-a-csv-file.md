@@ -100,7 +100,7 @@ Output:
 `bc` is a simple calculator, you can use it interactively or by piping an equation into it.
 
 ```bash
-$ cat /tmp/shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g' | bc
+$ cat shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g' | bc
 ```
 
 Output:
