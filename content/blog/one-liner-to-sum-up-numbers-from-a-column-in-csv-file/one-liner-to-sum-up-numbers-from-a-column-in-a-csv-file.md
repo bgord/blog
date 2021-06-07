@@ -56,8 +56,7 @@ pasta,3.79
 
 `awk` splits each line by a separator defined by the option `-F`.
 In our case, it's the comma.
-
-Then it prints the second column.
+Then it prints the second column from every row.
 
 ```bash
 $ cat shopping.csv | tail +2 | awk -F , '{print $2}'
