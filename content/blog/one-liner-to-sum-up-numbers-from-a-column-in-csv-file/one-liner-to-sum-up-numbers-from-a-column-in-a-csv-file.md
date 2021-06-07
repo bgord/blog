@@ -19,11 +19,11 @@ The goal is to create a one-line bash script calculating the sum of the prices, 
 1. **Display the file**
 
 ```bash
-$ cat /tmp/shopping.csv
+$ cat shopping.csv
 ```
 
-Output is exactly what you could expect, the file content itself, with no modifications.
-One thing is it allows us to redirect - pipe - this output to another Unix comand in the next step.
+This command prints the file content without modifications.
+It gives us the benefit to redirect - pipe - the output to another comand in the next step.
 
 ```
 item,price
