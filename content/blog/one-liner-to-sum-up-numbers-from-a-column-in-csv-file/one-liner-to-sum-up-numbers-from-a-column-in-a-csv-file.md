@@ -72,7 +72,7 @@ Output:
 `xargs` is used to "squash" the lines into a single string, separating them by space.
 
 ```bash
-$ cat /tmp/shopping.csv | tail +2 | awk -F , '{print $2}' | xargs
+$ cat shopping.csv | tail +2 | awk -F , '{print $2}' | xargs
 ```
 
 Output:
