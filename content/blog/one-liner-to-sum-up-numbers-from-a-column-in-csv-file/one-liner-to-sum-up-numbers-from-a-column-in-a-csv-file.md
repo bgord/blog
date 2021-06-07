@@ -87,7 +87,7 @@ Output:
 
 5. **Replace spaces with pluses**
 
-The `sed` expression replaces space `\` with `+` in the entire string (globally - `g`).
+The `sed` expression replaces the escaped space with `+` in the entire string (globally - `g`).
 
 ```bash
 $ cat shopping.csv | tail +2 | awk -F , '{print $2}' | xargs | sed -e 's/\ /+/g'
