@@ -35,10 +35,11 @@ pasta,3.79
 2. **Cut the first line**
 
 There are many ways to achieve it, but we use the `tail +n` syntax.
-It takes all the lines until the end of the file starting from the second line.
+
+In our case it takes all the lines until the end of the file, starting from the second line.
 
 ```bash
-$ cat /tmp/shopping.csv | tail +2
+$ cat shopping.csv | tail +2
 ```
 
 Output:
