@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# Usage:
+
+# ```
+# ./scripts/local-gatsby-start
+# ./scripts/local-gatsby-start -f
+# ./scripts/local-gatsby-start --force
+# ```
+
+# Options:
+# -f --force - clears Gatsby cache
+
 # Preload base bash configuration and functions
 source scripts/base.sh
 setup_base_config
