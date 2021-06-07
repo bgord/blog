@@ -1,6 +1,6 @@
 ---
 title: How do I identify my knowledge gaps and learn?
-date: "2019-01-26T09:24:29.169Z"
+date: "2019-01-26"
 description: Keeping track of my learning progress.
 type: general
 ---

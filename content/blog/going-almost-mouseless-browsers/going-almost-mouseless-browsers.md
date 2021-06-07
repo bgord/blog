@@ -1,6 +1,6 @@
 ---
 title: "Going (almost) mouseless: browsers"
-date: "2019-01-19T10:40:28.169Z"
+date: "2019-01-19"
 description: Learn shortcuts for browsers.
 type: general
 ---
