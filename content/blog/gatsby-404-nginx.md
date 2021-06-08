@@ -12,7 +12,7 @@ During Gatsby page development, when you hit a page that doesn't exist, you enco
 If you created a custom 404 page, for example in `src/pages/404.js`, you can click the `Preview custom 404 page` to display it.
 Entering the `/404` route will do the job as well.
 
-In production, however, the `404` page doesn't get handled by itself, unless you use a dedicated hosting service for Gatsby pages.
+In production, however, the `404` page doesn't get handled by itself unless you use a dedicated hosting service for Gatsby pages.
 That's because Gatsby's development server is no longer present.
 The production bundle is just a bunch of static files.
 Making use of a web server (like `nginx`) to serve the production page forces you to configure the error pages.
@@ -32,7 +32,7 @@ server {
 }
 ```
 
-After you enter a route that doesn't exist in your production Gatsby site, `nginx` displays its default 404 error page.
+After entering a route that doesn't exist in your production Gatsby site, `nginx` displays its default 404 error page.
 
 ![](/gatsby-404-nginx-production.png)
 
