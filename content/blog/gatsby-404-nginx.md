@@ -1,5 +1,5 @@
 ---
-title: "Configure nginx for Gatsby 404 page"
+title: "Configure nginx for Gatsby 404 error page"
 date: "2021-06-08"
 description: Nginx configuration for the not found page.
 type: nginx
@@ -13,13 +13,13 @@ If you created a custom 404 page, for example in `src/pages/404.js`, you can cli
 Entering the `/404` route will do the job as well.
 
 In production, however, the `404` page doesn't get handled by itself, unless you use a dedicated hosting service for Gatsby pages.
-That's because the Gatsby's development server is no longer present.
+That's because Gatsby's development server is no longer present.
 The production bundle is just a bunch of static files.
-Making use of a webserver (like `nginx`) to serve the production page forces you to configure the error pages.
+Making use of a web server (like `nginx`) to serve the production page forces you to configure the error pages.
 
 > Disclaimer: the following `nginx` configuration is pretty basic, don't use it.
 
-Let's assume your blog is on the `personalblog.com` domain, and is served fro the `/var/www/blog` directory on port `80`.
+Let's assume your blog is hosted on the `personalblog.com` domain and is served from the `/var/www/blog` directory on port `80`.
 
 ```nginx
 server {
@@ -32,7 +32,7 @@ server {
 }
 ```
 
-After you enter a route that doesn't exist in your production Gatsby site, `nginx` displays it's default 404 error page.
+After you enter a route that doesn't exist in your production Gatsby site, `nginx` displays its default 404 error page.
 
 ![](/gatsby-404-nginx-production.png)
 
