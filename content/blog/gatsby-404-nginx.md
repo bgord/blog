@@ -15,9 +15,9 @@ Entering the `/404` route will do the job as well.
 In production, however, the 404 page doesn't get handled by itself unless you use a dedicated hosting service for Gatsby pages.
 That's because Gatsby's development server is no longer present.
 The production bundle is just a bunch of static files.
-Making use of a web server (like `nginx`) to serve the production page forces you to configure the error pages.
+Making use of a web server (like `nginx`) to serve the production page forces you to configure the error pages yourself.
 
-> Disclaimer: the following `nginx` configuration is pretty basic, don't use it.
+> Disclaimer: the following `nginx` configuration is pretty basic, don't use it in production.
 
 Let's assume your blog is hosted on the `personalblog.com` domain and is served from the `/var/www/blog` directory on port `80`.
 
@@ -36,7 +36,7 @@ After entering a route that doesn't exist in your production Gatsby site, `nginx
 
 ![](/gatsby-404-nginx-production.png)
 
-Adding the following line makes `nginx` redirect to the `/404` if a 404 error happens.
+Adding the following line makes `nginx` redirect to the `/404` route in case of a 404 error.
 Your custom Gatsby 404 page will be displayed.
 
 ```nginx{5}
