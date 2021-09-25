@@ -11,7 +11,7 @@ GATSBY_ARCHIVE_PATH="build-cache/public.tar.gz"
 info "Cleaning previous build cache..."
 rm -rf build-cache/
 mkdir -p build-cache
-gatsby clean
+npx gatsby clean
 
 npx gatsby build
 
