@@ -16,7 +16,7 @@ module.exports = {
 				focus on React, testing, and REST APIs.`,
     },
     description: `A personal blog`,
-    siteUrl: `bartoszgordon.com`,
+    siteUrl: `https://bartoszgordon.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
