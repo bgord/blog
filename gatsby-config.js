@@ -12,7 +12,8 @@ module.exports = {
     title: `Bartosz Gordon`,
     author: {
       name: `Bartosz Gordon`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `I'm a full-stack JavaScript developer from Warsaw, Poland with main
+				focus on React, testing, and REST APIs.`,
     },
     description: `A personal blog`,
     siteUrl: `bartoszgordon.com`,
