@@ -2,22 +2,39 @@
 
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
-setup_base_config
 
-info "Environment: production"
+OUT_DIR="build"
 
-GATSBY_ARCHIVE_PATH="build-cache/public.tar.gz"
+info "Environment: staging"
+export NODE_ENV="staging"
 
-info "Cleaning previous build cache..."
-rm -rf build-cache/
-mkdir -p build-cache
+check_if_directory_exists node_modules
+
+# ==========================================================
+
+info "Building project!"
+
+# ==========================================================
+
+rm -rf $OUT_DIR
+mkdir $OUT_DIR
 npx gatsby clean
+info "Cleaned previous build cache"
+
+# ==========================================================
 
 npx gatsby build
+cp -r public/ build
+info "Gatsby built"
 
-info "Creating app archive..."
-tar czf $GATSBY_ARCHIVE_PATH public/
+# ==========================================================
 
-success "App archive created at $GATSBY_ARCHIVE_PATH"
+npx gzip build/*.js --extension=gz --extension=br
+npx gzip build/*.css --extension=gz --extension=br
+npx gzip build/*.png --extension=gz --extension=br
+npx gzip build/*.html --extension=gz --extension=br
+info "Compressing static files"
 
-info "You can test the app on your local machine by running: gatsby serve"
+# ==========================================================
+
+success "Project built correctly!"
