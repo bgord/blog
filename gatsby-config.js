@@ -9,16 +9,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Bartosz Gordon`,
     author: {
-      name: `Kyle Mathews`,
+      name: `Bartosz Gordon`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `A personal blog`,
+    siteUrl: `bartoszgordon.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -102,7 +99,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "bartoszgordon.com",
           },
         ],
       },
@@ -110,7 +107,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `bartoszgordon.com`,
         short_name: `Gatsby`,
         start_url: `/`,
         background_color: `#ffffff`,
