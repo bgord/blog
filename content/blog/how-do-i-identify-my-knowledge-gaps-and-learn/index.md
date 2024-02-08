@@ -104,7 +104,7 @@ An example of the answer looks like the following one.
 ```
 **What is a difference between arguments and parameters?**
 
-Parameters are variables in funcion definition.
+Parameters are variables in function definition.
 
 function add(x, y) { // x and y are parameters
   return x + y;
