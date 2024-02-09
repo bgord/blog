@@ -43,6 +43,24 @@ class ReportGenerator {
 }
 ```
 
-So far so good.
+So far so good. We've got the `type` of the Report we want to generate, we have a list of products. Let's do the job and implement the `ReportGenerator#generate` method. We do not really want to focus on the content of the reports, as the main educational purpose lies somewhere else. The assumption is the business is really fine with it.
+
+```typescript
+class ReportGenerator {
+  generate(type: ReportTypeEnum, products: ProductType[]): ReportResultType {
+    if (type === ReportTypeEnum.csv) {
+      return products
+        .map(product => Object.values(product).join(","))
+        .join("\n")
+    }
+    if (type === ReportTypeEnum.plain_text) {
+    }
+    if (type === ReportTypeEnum.html) {
+      return ""
+    }
+    return ""
+  }
+}
+```
 
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
