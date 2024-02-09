@@ -29,10 +29,17 @@ const products: ProductType = await ProductRepository.list()
 The next easy step is to create a `ReportGenerator` function with the following interface:
 
 ```typescript
-type ReportType = string
+type ReportResultType = string
+
+enum ReportTypeEnum {
+  csv = "csv",
+  plain_text = "plain_text",
+  html = "html",
+  short_plain_text = "short_plain_text",
+}
 
 class ReportGenerator {
-  generate(products: ProductType[]): ReportType {}
+  generate(type: ReportTypeEnum, products: ProductType[]): ReportResultType {}
 }
 ```
 
