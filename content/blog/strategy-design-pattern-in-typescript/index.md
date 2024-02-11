@@ -10,7 +10,7 @@ The requirement is to generate a report containg all products sold in the last w
 It sounds vague at first, but ok, you know which query should be used to get the list, you may have already received the data using a [Repository](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design#the-repository-pattern).
 
 You may start wondering what format should the report be in, and the business said it is... all of them!
-We have to implement CSV, plain text, HTML, and short plain text.
+We have to implement CSV, plain text, and HTML.
 
 The data we may have to work with may be as follows:
 
@@ -35,7 +35,6 @@ enum ReportTypeEnum {
   csv = "csv",
   plain_text = "plain_text",
   html = "html",
-  short_plain_text = "short_plain_text",
 }
 
 class ReportGenerator {
@@ -53,12 +52,19 @@ class ReportGenerator {
         .map(product => Object.values(product).join(","))
         .join("\n")
     }
-    if (type === ReportTypeEnum.plain_text) {
-    }
+
     if (type === ReportTypeEnum.html) {
-      return ""
+      return /* HTML */ `
+        <ul>
+          {products.map(product =>
+              `<li>{Object.values(product).join(" ")}</li>`
+          )}
+        </ul>
+      `
     }
-    return ""
+
+    // plain_text
+    return products.map(product => Object.values(product).join(" "))
   }
 }
 ```
