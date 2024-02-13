@@ -69,4 +69,45 @@ class ReportGenerator {
 }
 ```
 
+One could have a look at this code and say it looks fine, does the job, and does not overcomplicate things.
+
+Let's make it more real world like though. We will not focus about the report generation itself - the output is not going to change, but we will care more about the approach to upcoming changes and the structure of the code.
+
+Another day comes, and we receive the folliwng requirement. Only `admin`s are allowed to create CSV reports. Ok, you may think, it's not that hard. We will pass the `role` property to the `generate` method and adjust one of the if statements.
+
+```typescript
+class ReportGenerator {
+  generate(
+    type: ReportTypeEnum,
+    role: RoleEnum,
+    products: ProductType[]
+  ): ReportResultType {
+    if (type === ReportTypeEnum.csv) {
+      if (role !== RoleEnum.admin) {
+        throw new Error("Only admin can generate a csv report")
+      }
+
+      return products
+        .map(product => Object.values(product).join(","))
+        .join("\n")
+    }
+
+    if (type === ReportTypeEnum.html) {
+      return /* HTML */ `
+        <ul>
+          {products.map(product =>
+              `<li>{Object.values(product).join(" ")}</li>`
+          )}
+        </ul>
+      `
+    }
+
+    // plain_text
+    return products.map(product => Object.values(product).join(" "))
+  }
+}
+```
+
+A spotty eye may catch some duplication that's going on here.
+
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
