@@ -108,6 +108,39 @@ class ReportGenerator {
 }
 ```
 
-A spotty eye may catch some duplication that's going on here.
+A spotty eye in a code review may catch some "duplication" that is going on here. DRY, right? "Don't repeat yourself", the principle says. Ok, let's perform a mechanical refactoring of the `generate` method (for now).
+
+```typescript
+class ReportGenerator {
+  generate(
+    type: ReportTypeEnum,
+    role: RoleEnum,
+    products: ProductType[]
+  ): ReportResultType {
+    if (type === ReportTypeEnum.csv) {
+      if (role !== RoleEnum.admin) {
+        throw new Error("Only admin can generate a csv report")
+      }
+
+      return products
+        .map(product => Object.values(product).join(","))
+        .join("\n")
+    }
+
+    const rows = products.map(product => Object.values(product).join(" "))
+
+    if (type === ReportTypeEnum.html) {
+      return /* HTML */ `
+        <ul>{rows.map(row => `<li>{row}</li>`)}</ul>
+      `
+    }
+
+    // plain_text
+    return rows;
+  }
+}
+```
+
+Few weeks passed, the code is working fine in the production. No issues, no errors. Just after the weekend, on Monday, the Product Owner comes to the refinement session, and presents the next requrement. "In the HTML report we need to exclude products cheaper than 1 of any currency". Strange, you may think, but as we all know, shit happens.
 
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
