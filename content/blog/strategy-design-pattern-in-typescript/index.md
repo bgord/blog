@@ -141,6 +141,46 @@ class ReportGenerator {
 }
 ```
 
-Few weeks passed, the code is working fine in the production. No issues, no errors. Just after the weekend, on Monday, the Product Owner comes to the refinement session, and presents the next requrement. "In the HTML report we need to exclude products cheaper than 1 of any currency". Strange, you may think, but as we all know, shit happens.
+A few weeks passed, the code is working fine in the production. No issues, no errors. Just after the weekend, on Monday, the Product Owner comes to the refinement session, and presents the next requrement. "In the HTML report we need to exclude products cheaper than 1 of any currency". Strange, you may think, but as we all know, shit happens.
+
+Since the row creation for both html and plain_text reports is abstracted away, someone's intuition may say it's a good thing to put a filter there.
+
+```typescript
+class ReportGenerator {
+  generate(
+    type: ReportTypeEnum,
+    role: RoleEnum,
+    products: ProductType[]
+  ): ReportResultType {
+    if (type === ReportTypeEnum.csv) {
+      if (role !== RoleEnum.admin) {
+        throw new Error("Only admin can generate a csv report")
+      }
+
+      return products
+        .map(product => Object.values(product).join(","))
+        .join("\n")
+    }
+
+    const rows = products
+      .filter(product =>
+        type === ReportTypeEnum.html ? product.price >= 1 : true
+      )
+      .map(product => Object.values(product).join(" "))
+
+    if (type === ReportTypeEnum.html) {
+      return /* HTML */ `
+        <ul>{rows.map(row => `<li>{row}</li>`)}</ul>
+      `
+    }
+
+    // plain_text
+    return rows
+  }
+}
+```
+
+We are going to stop messing with the requirements and the code structure now. I have seen many examples of such code that is both difficult to reason about, and difficult to modify and maintain.
+As you may have noticed, we did not end up with a ball of mud after the initial requirement, but it slowly became a mess. Now our mission is to identify the pain points, and refactor it.
 
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
