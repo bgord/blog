@@ -56,8 +56,8 @@ class ReportGenerator {
     if (type === ReportTypeEnum.html) {
       return /* HTML */ `
         <ul>
-          {products.map(product =>
-              `<li>{Object.values(product).join(" ")}</li>`
+          ${products.map(
+            product => `<li>${Object.values(product).join(" ")}</li>`
           )}
         </ul>
       `
@@ -95,8 +95,8 @@ class ReportGenerator {
     if (type === ReportTypeEnum.html) {
       return /* HTML */ `
         <ul>
-          {products.map(product =>
-              `<li>{Object.values(product).join(" ")}</li>`
+          ${products.map(
+            product => `<li>${Object.values(product).join(" ")}</li>`
           )}
         </ul>
       `
@@ -131,12 +131,14 @@ class ReportGenerator {
 
     if (type === ReportTypeEnum.html) {
       return /* HTML */ `
-        <ul>{rows.map(row => `<li>{row}</li>`)}</ul>
+        <ul>
+          ${rows.map(row => `<li>${row}</li>`)}
+        </ul>
       `
     }
 
     // plain_text
-    return rows;
+    return rows
   }
 }
 ```
@@ -170,7 +172,9 @@ class ReportGenerator {
 
     if (type === ReportTypeEnum.html) {
       return /* HTML */ `
-        <ul>{rows.map(row => `<li>{row}</li>`)}</ul>
+        <ul>
+          ${rows.map(row => `<li>${row}</li>`)}
+        </ul>
       `
     }
 
