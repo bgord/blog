@@ -183,4 +183,21 @@ class ReportGenerator {
 We are going to stop messing with the requirements and the code structure now. I have seen many examples of such code that is both difficult to reason about, and difficult to modify and maintain.
 As you may have noticed, we did not end up with a ball of mud after the initial requirement, but it slowly became a mess. Now our mission is to identify the pain points, and refactor it.
 
+## Pain points
+
+##### S stands for single responsibility principle
+
+There are at least three reasons this class can change.
+
+- access permissions (only admin can create CSV reports)
+- report generator implementation (e.g. reordering columns in the CSV report)
+- products visible in a report (filter out products cheaper than 1 from the HTML report)
+- adding a new report type
+
+##### O stands for open-closed principle
+
+The code we wrote definitely violates this principle.
+
+We cannot add or change a report type without modifying the ReportGenerator class.
+
 > In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
